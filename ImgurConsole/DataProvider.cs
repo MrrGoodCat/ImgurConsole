@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Imgur.API.Authentication.Impl;
 using Imgur.API.Authentication;
 using Imgur.API.Models.Impl;
+using System.Web.Script.Serialization;
 using System.Net;
 
 namespace ImgurConsole
