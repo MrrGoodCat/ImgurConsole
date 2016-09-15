@@ -60,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="API\Imgur.API.dll" />
-    <Content Include="API\Imgur.API.pdb" />
     <Content Include="API\Imgur.API.xml" />
     <Content Include="API\Newtonsoft.Json.dll" />
   </ItemGroup>

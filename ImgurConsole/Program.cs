@@ -10,7 +10,9 @@ namespace ImgurConsole
     {
         static void Main(string[] args)
         {
-
+            DataProvider data = new DataProvider();
+            Console.WriteLine(data.authorizationUri);
+            Console.ReadKey();
         }
     }
 }

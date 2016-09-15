@@ -8,6 +8,7 @@ using Imgur.API.Authentication;
 using Imgur.API.Models.Impl;
 using System.Web.Script.Serialization;
 using System.Net;
+using Imgur.API.Endpoints.Impl;
 
 namespace ImgurConsole
 {
@@ -17,12 +18,18 @@ namespace ImgurConsole
         const string ClientId = "59b901759d20a52";
         const string ClientSecret = "3a5e0e186777406b61cfc892962a0f8fdea5994f";
         ImgurClient imgurClient;
+        OAuth2Endpoint endpoint;
+        public string authorizationUri;
+
+
         Imgur.API.Models.Impl.Image ImgurImage;
         
         public DataProvider()
         {
             imgurClient = new ImgurClient(ClientId, ClientSecret);
-            ImgurImage = new Image();        
+            ImgurImage = new Image();
+            endpoint = new OAuth2Endpoint(imgurClient);
+            authorizationUri = endpoint.GetAuthorizationUrl(Imgur.API.Enums.OAuth2ResponseType.Pin);
         }
         public static string GetPin(string clientId, string clientSecret)
         {
@@ -64,5 +71,4 @@ namespace ImgurConsole
         public string AccessToken { get; set; }
         public string RefreshToken { get; set; }
     }
-}
 }
