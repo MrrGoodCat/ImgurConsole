@@ -16,7 +16,7 @@ namespace ImgurConsole
     public class DataProvider
     {
         const string ClientId = "59b901759d20a52";
-        const string ClientSecret = "3a5e0e186777406b61cfc892962a0f8fdea5994f";
+        const string ClientSecret = "9fa708a1d20975d47e425c255ebd60acc49c2b58";
         ImgurClient imgurClient;
         OAuth2Endpoint endpoint;
         public string authorizationUri;
@@ -29,7 +29,7 @@ namespace ImgurConsole
             imgurClient = new ImgurClient(ClientId, ClientSecret);
             ImgurImage = new Image();
             endpoint = new OAuth2Endpoint(imgurClient);
-            authorizationUri = endpoint.GetAuthorizationUrl(Imgur.API.Enums.OAuth2ResponseType.Pin);
+            authorizationUri = endpoint.GetAuthorizationUrl(Imgur.API.Enums.OAuth2ResponseType.Token);
         }
         public static string GetPin(string clientId, string clientSecret)
         {
