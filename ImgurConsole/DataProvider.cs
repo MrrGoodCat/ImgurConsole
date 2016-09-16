@@ -22,19 +22,20 @@ namespace ImgurConsole
         public string authorizationUri;
 
 
-        Imgur.API.Models.Impl.Image ImgurImage;
+        Image ImgurImage;
         
         public DataProvider()
         {
-            imgurClient = new ImgurClient(ClientId, ClientSecret);
-            ImgurImage = new Image();
-            endpoint = new OAuth2Endpoint(imgurClient);
-            authorizationUri = endpoint.GetAuthorizationUrl(Imgur.API.Enums.OAuth2ResponseType.Token);
+            //GetPin(ClientId, ClientSecret);
+            //imgurClient = new ImgurClient(ClientId, ClientSecret);
+            //ImgurImage = new Image();
+            //endpoint = new OAuth2Endpoint(imgurClient);
+            //authorizationUri = endpoint.GetAuthorizationUrl(Imgur.API.Enums.OAuth2ResponseType.Token);
         }
         public static string GetPin(string clientId, string clientSecret)
         {
             string OAuthUrlTemplate = "https://api.imgur.com/oauth2/authorize?client_id={0}&response_type={1}&state={2}";
-            string RequestUrl = String.Format(OAuthUrlTemplate, clientId, "pin", "whatever");
+            string RequestUrl = String.Format(OAuthUrlTemplate, clientId, "pin", "ok");
             string Pin = String.Empty;
 
             // Promt the user to browse to that URL or show the Webpage in your application
